@@ -174,21 +174,58 @@ def restore_outputs_of_code_cells(new_content, original_ipynb_file_content):
     return json.dumps(new_notebook, indent=1)
 
 def text_to_json(text):
-    """Converts a string, e.g. a response from an LLM, to a valid JSON object."""
+    """
+    Converts a string to a valid JSON object, handling various edge cases.
+    
+    Args:
+        text (str): Input text that should be converted to JSON
+        
+    Returns:
+        list/dict: Parsed JSON object
+        
+    Raises:
+        json.JSONDecodeError: If text cannot be parsed as JSON after all attempts
+    """
     import json
     import re
-
+    
+    # 1. 기본 전처리
+    text = text.strip()
+    if not text:
+        return []
+        
+    # 2. 제어 문자 제거
     text = re.sub(r'[\x00-\x1f\x7f]', '', text)
-
-    if "[" in text:
-        text = "[" +  text.split("[")[1]
-    if "]" in text:
-        text = text.split("]")[0] + "]"
-    text = text.replace("'", "\"")
-
-    print("JSON?:", text)
-
-    return json.loads(text)
+    
+    # 3. JSON 배열 추출
+    if "[" in text and "]" in text:
+        start = text.find("[")
+        end = text.rfind("]")
+        text = text[start:end + 1]
+    
+    try:
+        # 4. 첫 번째 시도: 직접 JSON 파싱
+        return json.loads(text)
+    except json.JSONDecodeError:
+        try:
+            # 5. 두 번째 시도: 중첩된 따옴표 처리
+            # "something "quoted" here" -> "something 'quoted' here"
+            text = re.sub(r'"([^"]*)"([^"]*)"', r'"\1\'\2\'', text)
+            return json.loads(text)
+        except json.JSONDecodeError:
+            # 6. 세 번째 시도: 수동 파싱
+            if text.startswith('[') and text.endswith(']'):
+                items = text.strip('[]').split('", "')
+                items = [item.strip(' "\'') for item in items if item.strip()]
+                return items
+            else:
+                # 7. 마지막 시도: 작은따옴표를 큰따옴표로 변환
+                text = text.replace("'", '"')
+                try:
+                    return json.loads(text)
+                except json.JSONDecodeError as e:
+                    print(f"Failed to parse: {text}")
+                    raise e
 
 
 def is_github_url(url):
