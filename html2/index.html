@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Github 어시스턴트 홈페이지</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/undraw-js@1.0.6/index.min.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <script>
+    UndrawJS.init({defaultColor: "#f00"})
+  </script>
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+      <h1 class="text-3xl font-bold">Github 어시스턴트 홈페이지</h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="#기능" class="text-blue-500 hover:underline">기능</a></li>
+          <li><a href="#활용법" class="text-blue-500 hover:underline">활용법</a></li>
+          <li><a href="#FAQ" class="text-blue-500 hover:underline">FAQ</a></li>
+          <li><a href="#문의" class="text-blue-500 hover:underline">문의</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="mt-8 max-w-7xl mx-auto px-4">
+    <!-- 히어로 섹션 -->
+    <section id="hero" class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">코딩 초보자를 위한 Github 어시스턴트</h2>
+      <p class="mb-4">당신의 코딩 여정을 도와줄 혁신적인 도구입니다. 간단한 소개 문구를 여기에 넣으세요.</p>
+      <a href="#기능" class="inline-block bg-blue-500 text-white px-6 py-2 rounded shadow">시작하기</a>
+      <img data-ujs-name="Hero" alt="히어로 일러스트" class="w-full mt-4 rounded shadow" src="https://undraw.co/api/illustrations/target.svg">
+    </section>
+    <!-- 주요 기능 Section -->
+    <section id="기능" class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">주요 기능</h2>
+      <ul class="list-disc list-inside">
+        <li>Github 어시스턴트의 정의, 역할 및 필요성 설명</li>
+        <li>다양한 어시스턴트 (Github Copilot, ChatGPT 등) 비교</li>
+        <li>코딩 과정에서의 활용 예시 및 명령어 안내</li>
+        <li>실제 코딩 예제를 통한 팁 제공</li>
+      </ul>
+      <img data-ujs-name="Function" alt="주요 기능 일러스트" class="w-full mt-4 rounded shadow" src="https://undraw.co/api/illustrations/function.svg">
+    </section>
+    <!-- 콘텐츠 구성 & 디자인 Section -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">콘텐츠 구성 및 디자인</h2>
+      <p class="mb-4">
+        깔끔하고 직관적인 디자인으로 사용자가 쉽게 정보를 찾고 이해할 수 있도록 구성했습니다.
+        반응형 레이아웃과 사용자 친화적인 인터페이스를 제공합니다.
+      </p>
+      <img data-ujs-name="Design" alt="디자인 일러스트" class="w-full rounded shadow" src="https://undraw.co/api/illustrations/design.svg">
+    </section>
+    <!-- 기술 스택 & 추가 사항 Section -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">기술 스택 & 추가 사항</h2>
+      <ul class="list-disc list-inside">
+        <li>HTML/CSS 및 Tailwind CSS를 이용한 모던 레이아웃</li>
+        <li>필요 시 JavaScript를 통한 동적 기능 구현</li>
+        <li>SEO 최적화, 접근성 고려 및 유지보수 편의성</li>
+      </ul>
+      <img data-ujs-name="Tech stack" alt="기술 스택 일러스트" class="w-full mt-4 rounded shadow" src="https://undraw.co/api/illustrations/tech-stack.svg">
+    </section>
+    <!-- FAQ Section -->
+    <section id="FAQ" class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">자주 묻는 질문</h2>
+      <div class="mb-4">
+        <p><strong>Q:</strong> Github 어시스턴트는 무엇인가요?</p>
+        <p><strong>A:</strong> Github 어시스턴트는 코딩 과정을 돕는 혁신적인 도구입니다.</p>
+      </div>
+      <div class="mb-4">
+        <p><strong>Q:</strong> 어떻게 시작하나요?</p>
+        <p><strong>A:</strong> 시작하기 버튼을 눌러 주요 기능과 활용법을 확인해보세요.</p>
+      </div>
+      <img data-ujs-name="Faq" alt="FAQ 일러스트" class="w-full rounded shadow" src="https://undraw.co/api/illustrations/faq.svg">
+    </section>
+    <!-- Github 어시스턴트 종류 Section -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">Github 어시스턴트 종류</h2>
+      <ul class="list-disc list-inside">
+        <li>Github Copilot</li>
+        <li>ChatGPT</li>
+        <li>기타 AI 기반 어시스턴트</li>
+      </ul>
+      <img data-ujs-name="Artificial intelligence" alt="어시스턴트 종류 일러스트" class="w-full mt-4 rounded shadow" src="https://undraw.co/api/illustrations/artificial-intelligence.svg">
+    </section>
+    <!-- Github 어시스턴트 활용법 Section -->
+    <section id="활용법" class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">Github 어시스턴트 활용법</h2>
+      <ul class="list-disc list-inside">
+        <li>코딩 단계별 활용 가이드</li>
+        <li>실제 코딩 예제 및 활용 팁 제공</li>
+        <li>주요 명령어와 기능 안내</li>
+      </ul>
+      <img data-ujs-name="App wireframe" alt="어시스턴트 활용법 일러스트" class="w-full mt-4 rounded shadow" src="https://undraw.co/api/illustrations/app-wireframe.svg">
+    </section>
+    <!-- Github 어시스턴트 장단점 Section -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">Github 어시스턴트 장단점</h2>
+      <ul class="list-disc list-inside">
+        <li>장점: 생산성 향상, 코드 품질 개선</li>
+        <li>단점: 오류 가능성, 의존성 문제</li>
+      </ul>
+      <img data-ujs-name="Analysis" alt="어시스턴트 장단점 일러스트" class="w-full mt-4 rounded shadow" src="https://undraw.co/api/illustrations/analysis.svg">
+    </section>
+    <!-- 문의하기 Section -->
+    <section id="문의" class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">문의하기</h2>
+      <p class="mb-4">추가 문의 사항은 아래 링크를 통해 문의해주세요.</p>
+      <a href="mailto:contact@example.com" class="inline-block bg-blue-500 text-white px-6 py-2 rounded shadow">이메일 보내기</a>
+      <img data-ujs-name="Contact us page" alt="문의 일러스트" class="w-full mt-4 rounded shadow" src="https://undraw.co/api/illustrations/contact-us-page.svg">
+    </section>
+  </main>
+  <footer class="bg-white border-t mt-12">
+    <div class="max-w-7xl mx-auto py-4 px-4 text-center text-sm text-gray-600">
+      &copy; 2023 Github 어시스턴트. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
